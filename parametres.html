@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paramètres | Tech2 etc</title>
+        <meta name="description" content="Modifiez vos préférences personnelles et les options de l'application.">
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body class="settings-page">
+
+        <header class="settings-topbar">
+            <a class="settings-brand" href="index.html">
+                <span class="settings-brand-mark"><i class="fas fa-graduation-cap"></i></span>
+                <span class="settings-brand-text">
+                    <strong>Tech2 etc</strong>
+                    <small>Plateforme d'apprentissage</small>
+                </span>
+            </a>
+            <a class="settings-back" href="index.html"><i class="fas fa-arrow-left"></i> Retour au site</a>
+        </header>
+
+        <main class="settings-main">
+
+            <div class="settings-heading">
+                <span class="settings-eyebrow">Compte</span>
+                <h1>Paramètres</h1>
+                <p>Modifiez vos préférences personnelles et les options de l'application. Vos changements sont enregistrés sur cet appareil.</p>
+            </div>
+
+            <form id="settings-form" novalidate>
+
+                <!-- Profil -->
+                <section class="settings-card">
+                    <header class="settings-card-head">
+                        <span class="settings-card-icon"><i class="fas fa-id-card"></i></span>
+                        <div>
+                            <h2>Profil</h2>
+                            <p>Vos informations personnelles.</p>
+                        </div>
+                    </header>
+
+                    <div class="settings-profile">
+                        <div class="settings-avatar" id="avatar" aria-hidden="true"><i class="fas fa-user"></i></div>
+                        <div class="settings-profile-fields">
+                            <label class="settings-field" for="name">
+                                <span>Nom complet</span>
+                                <input id="name" name="name" type="text" autocomplete="name" placeholder="Ex. Aminata Diallo" required>
+                                <em class="settings-error" id="name-error" hidden>Veuillez indiquer votre nom.</em>
+                            </label>
+                            <label class="settings-field" for="email">
+                                <span>Adresse e-mail</span>
+                                <input id="email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required>
+                                <em class="settings-error" id="email-error" hidden>Veuillez saisir une adresse e-mail valide.</em>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Préférences personnelles -->
+                <section class="settings-card">
+                    <header class="settings-card-head">
+                        <span class="settings-card-icon"><i class="fas fa-sliders-h"></i></span>
+                        <div>
+                            <h2>Préférences personnelles</h2>
+                            <p>Adaptez l'apparence de la plateforme à votre façon d'apprendre.</p>
+                        </div>
+                    </header>
+
+                    <div class="settings-rows">
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Langue de l'interface</h3>
+                                <p>Langue utilisée dans les menus et les leçons.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <select id="language" name="language" aria-label="Langue de l'interface">
+                                    <option value="fr">Français</option>
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Thème</h3>
+                                <p>Choisissez l'apparence claire ou sombre de l'interface.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <div class="settings-segmented" role="radiogroup" aria-label="Thème">
+                                    <label>
+                                        <input type="radio" name="theme" value="light">
+                                        <span><i class="fas fa-sun"></i> Clair</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="theme" value="dark">
+                                        <span><i class="fas fa-moon"></i> Sombre</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="theme" value="system">
+                                        <span><i class="fas fa-desktop"></i> Système</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Taille du texte</h3>
+                                <p>Ajustez la taille de lecture des pages.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <select id="fontSize" name="fontSize" aria-label="Taille du texte">
+                                    <option value="small">Petite</option>
+                                    <option value="normal">Normale</option>
+                                    <option value="large">Grande</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Objectif hebdomadaire</h3>
+                                <p>Temps d'apprentissage que vous souhaitez atteindre chaque semaine.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <select id="goal" name="goal" aria-label="Objectif hebdomadaire">
+                                    <option value="1">1 heure par semaine</option>
+                                    <option value="3">3 heures par semaine</option>
+                                    <option value="5">5 heures par semaine</option>
+                                    <option value="7">7 heures ou plus</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notifications -->
+                <section class="settings-card">
+                    <header class="settings-card-head">
+                        <span class="settings-card-icon"><i class="fas fa-bell"></i></span>
+                        <div>
+                            <h2>Notifications</h2>
+                            <p>Choisissez les alertes que vous souhaitez recevoir.</p>
+                        </div>
+                    </header>
+
+                    <div class="settings-rows">
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Notifications par e-mail</h3>
+                                <p>Nouveautés, annonces et mises à jour de la plateforme.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <label class="settings-switch">
+                                    <input type="checkbox" id="emailNotifications" name="emailNotifications" role="switch" aria-label="Notifications par e-mail">
+                                    <span class="settings-switch-track"><span class="settings-switch-knob"></span></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Rappels de cours</h3>
+                                <p>Un rappel avant le début de chaque leçon programmée.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <label class="settings-switch">
+                                    <input type="checkbox" id="courseReminders" name="courseReminders" role="switch" aria-label="Rappels de cours">
+                                    <span class="settings-switch-track"><span class="settings-switch-knob"></span></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Recommandations</h3>
+                                <p>Suggestions de cours basées sur vos progrès.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <label class="settings-switch">
+                                    <input type="checkbox" id="recommendations" name="recommendations" role="switch" aria-label="Recommandations">
+                                    <span class="settings-switch-track"><span class="settings-switch-knob"></span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Options de l'application -->
+                <section class="settings-card">
+                    <header class="settings-card-head">
+                        <span class="settings-card-icon"><i class="fas fa-cog"></i></span>
+                        <div>
+                            <h2>Options de l'application</h2>
+                            <p>Réglez le comportement des leçons et de l'affichage.</p>
+                        </div>
+                    </header>
+
+                    <div class="settings-rows">
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Lecture automatique des vidéos</h3>
+                                <p>Lancer la leçon suivante dès la fin de la vidéo en cours.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <label class="settings-switch">
+                                    <input type="checkbox" id="autoplay" name="autoplay" role="switch" aria-label="Lecture automatique des vidéos">
+                                    <span class="settings-switch-track"><span class="settings-switch-knob"></span></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Mode compact</h3>
+                                <p>Réduire les espacements pour afficher plus de contenu à l'écran.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <label class="settings-switch">
+                                    <input type="checkbox" id="compact" name="compact" role="switch" aria-label="Mode compact">
+                                    <span class="settings-switch-track"><span class="settings-switch-knob"></span></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <div class="settings-row-text">
+                                <h3>Sous-titres des vidéos</h3>
+                                <p>Langue des sous-titres affichés pendant les leçons.</p>
+                            </div>
+                            <div class="settings-row-control">
+                                <select id="subtitles" name="subtitles" aria-label="Sous-titres des vidéos">
+                                    <option value="fr">Français</option>
+                                    <option value="en">Anglais</option>
+                                    <option value="off">Aucun</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Réinitialisation -->
+                <section class="settings-card settings-card--danger">
+                    <header class="settings-card-head">
+                        <span class="settings-card-icon"><i class="fas fa-rotate-left"></i></span>
+                        <div>
+                            <h2>Réinitialiser</h2>
+                            <p>Revenir à la configuration d'origine.</p>
+                        </div>
+                    </header>
+
+                    <div class="settings-row">
+                        <div class="settings-row-text">
+                            <h3>Rétablir les paramètres par défaut</h3>
+                            <p>Votre profil et vos préférences enregistrés sur cet appareil seront effacés.</p>
+                        </div>
+                        <div class="settings-row-control">
+                            <button type="button" class="settings-btn settings-btn--danger" id="reset-btn">
+                                <i class="fas fa-rotate-left"></i> Réinitialiser
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="settings-actions">
+                    <p class="settings-actions-status" id="status" aria-live="polite">Toutes les modifications sont enregistrées.</p>
+                    <div class="settings-actions-buttons">
+                        <button type="button" class="settings-btn settings-btn--ghost" id="cancel-btn">Annuler</button>
+                        <button type="submit" class="settings-btn settings-btn--primary" id="save-btn" aria-label="Enregistrer les modifications">
+                            <i class="fas fa-check"></i> Enregistrer
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </main>
+
+        <div class="settings-toast" id="toast" role="status" aria-live="polite"></div>
+
+        <script>
+            // Paramètres : préférences stockées localement sur l'appareil
+            (function () {
+                var STORAGE_KEY = "tech2etc:settings";
+
+                var DEFAULTS = {
+                    name: "",
+                    email: "",
+                    language: "fr",
+                    theme: "system",
+                    fontSize: "normal",
+                    goal: "3",
+                    emailNotifications: true,
+                    courseReminders: true,
+                    recommendations: false,
+                    autoplay: false,
+                    compact: false,
+                    subtitles: "fr"
+                };
+
+                var form = document.getElementById("settings-form");
+                var toast = document.getElementById("toast");
+                var status = document.getElementById("status");
+                var avatar = document.getElementById("avatar");
+                var nameInput = document.getElementById("name");
+                var emailInput = document.getElementById("email");
+                var nameError = document.getElementById("name-error");
+                var emailError = document.getElementById("email-error");
+                var cancelBtn = document.getElementById("cancel-btn");
+                var resetBtn = document.getElementById("reset-btn");
+                var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+                var toastTimer;
+                var saved = loadSettings();
+
+                function loadSettings() {
+                    var stored = {};
+                    try {
+                        stored = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+                    } catch (error) {
+                        stored = {};
+                    }
+                    return Object.assign({}, DEFAULTS, stored);
+                }
+
+                function fields() {
+                    return form.querySelectorAll("[name]");
+                }
+
+                function populate(values) {
+                    fields().forEach(function (field) {
+                        var key = field.name;
+                        if (!(key in values)) {
+                            return;
+                        }
+                        if (field.type === "checkbox") {
+                            field.checked = Boolean(values[key]);
+                        } else if (field.type === "radio") {
+                            field.checked = field.value === String(values[key]);
+                        } else {
+                            field.value = values[key];
+                        }
+                    });
+                    updateAvatar();
+                }
+
+                function readForm() {
+                    var values = {};
+                    fields().forEach(function (field) {
+                        if (field.type === "checkbox") {
+                            values[field.name] = field.checked;
+                        } else if (field.type === "radio") {
+                            if (field.checked) {
+                                values[field.name] = field.value;
+                            }
+                        } else {
+                            values[field.name] = field.value;
+                        }
+                    });
+                    return Object.assign({}, DEFAULTS, values);
+                }
+
+                function resolveTheme(theme) {
+                    if (theme === "system") {
+                        return darkQuery.matches ? "dark" : "light";
+                    }
+                    return theme;
+                }
+
+                function applyPreferences(values) {
+                    document.documentElement.dataset.theme = resolveTheme(values.theme);
+                    document.documentElement.dataset.fontsize = values.fontSize;
+                    document.body.dataset.compact = values.compact ? "true" : "false";
+                }
+
+                function updateAvatar() {
+                    var name = nameInput.value.trim();
+                    if (!name) {
+                        avatar.innerHTML = '<i class="fas fa-user"></i>';
+                        return;
+                    }
+                    avatar.textContent = name
+                        .split(/\s+/)
+                        .slice(0, 2)
+                        .map(function (word) { return word.charAt(0); })
+                        .join("")
+                        .toUpperCase();
+                }
+
+                function refreshStatus() {
+                    var dirty = JSON.stringify(readForm()) !== JSON.stringify(saved);
+                    status.textContent = dirty
+                        ? "Modifications non enregistrées."
+                        : "Toutes les modifications sont enregistrées.";
+                    status.classList.toggle("is-dirty", dirty);
+                }
+
+                function clearFieldErrors() {
+                    nameInput.closest(".settings-field").classList.remove("is-invalid");
+                    emailInput.closest(".settings-field").classList.remove("is-invalid");
+                    nameError.hidden = true;
+                    emailError.hidden = true;
+                }
+
+                function validateProfile() {
+                    var nameOk = nameInput.value.trim().length >= 2;
+                    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim());
+
+                    nameInput.closest(".settings-field").classList.toggle("is-invalid", !nameOk);
+                    emailInput.closest(".settings-field").classList.toggle("is-invalid", !emailOk);
+                    nameError.hidden = nameOk;
+                    emailError.hidden = emailOk;
+
+                    return nameOk && emailOk;
+                }
+
+                // Place la notification juste au-dessus de la barre d'actions collante.
+                function positionToast() {
+                    var bar = document.querySelector(".settings-actions");
+                    if (!bar) {
+                        return;
+                    }
+                    toast.style.bottom = Math.round(bar.getBoundingClientRect().height + 32) + "px";
+                }
+
+                function showToast(message, isError) {
+                    toast.textContent = message;
+                    toast.classList.toggle("is-error", Boolean(isError));
+                    positionToast();
+                    toast.classList.add("is-visible");
+                    clearTimeout(toastTimer);
+                    toastTimer = setTimeout(function () {
+                        toast.classList.remove("is-visible");
+                    }, 2600);
+                }
+
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    if (!validateProfile()) {
+                        refreshStatus();
+                        showToast("Veuillez vérifier les champs du profil.", true);
+                        return;
+                    }
+                    saved = readForm();
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                    applyPreferences(saved);
+                    clearFieldErrors();
+                    refreshStatus();
+                    showToast("Paramètres enregistrés.");
+                });
+
+                cancelBtn.addEventListener("click", function () {
+                    populate(saved);
+                    applyPreferences(saved);
+                    clearFieldErrors();
+                    refreshStatus();
+                });
+
+                resetBtn.addEventListener("click", function () {
+                    if (!window.confirm("Rétablir tous les paramètres par défaut ?")) {
+                        return;
+                    }
+                    localStorage.removeItem(STORAGE_KEY);
+                    saved = Object.assign({}, DEFAULTS);
+                    populate(saved);
+                    applyPreferences(saved);
+                    clearFieldErrors();
+                    refreshStatus();
+                    showToast("Paramètres réinitialisés.");
+                });
+
+                form.addEventListener("input", function () {
+                    updateAvatar();
+                    refreshStatus();
+                });
+
+                form.addEventListener("change", function () {
+                    // Aperçu immédiat des préférences d'affichage ; elles ne sont
+                    // enregistrées qu'après « Enregistrer ».
+                    applyPreferences(readForm());
+                    refreshStatus();
+                });
+
+                nameInput.addEventListener("input", function () {
+                    if (nameInput.value.trim().length >= 2) {
+                        nameInput.closest(".settings-field").classList.remove("is-invalid");
+                        nameError.hidden = true;
+                    }
+                });
+
+                emailInput.addEventListener("input", function () {
+                    if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim())) {
+                        emailInput.closest(".settings-field").classList.remove("is-invalid");
+                        emailError.hidden = true;
+                    }
+                });
+
+                darkQuery.addEventListener("change", function () {
+                    if (saved.theme === "system") {
+                        applyPreferences(saved);
+                    }
+                });
+
+                populate(saved);
+                applyPreferences(saved);
+                refreshStatus();
+            })();
+        </script>
+
+    </body>
+
+</html>
